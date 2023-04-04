@@ -30,6 +30,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  overflow: hidden;
 }
 
 h1 {
@@ -239,6 +240,25 @@ button:focus-visible {
 div:focus{
   background-color: blue;
 }
+
+@media (orientation: portrait) {
+  .textInput {
+    width: 100%;
+  }
+  .RandomizeSection {
+    position: relative;
+    top:1%;
+    right:auto;
+    margin-right: 50%;
+    transform: none;
+  }
+  .RandomizeSection h4{
+    height: 0;
+    margin: 0;
+    font-size: 0;
+  }
+}
+
 
 @media (max-aspect-ratio: 1) {
   .textInput {
