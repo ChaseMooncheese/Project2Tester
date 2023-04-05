@@ -15,11 +15,6 @@ export default function RandomizeButton(props){
         const numLines = Math.floor(1 + Math.random() * numPossibleCombinations);
         const numPowerIterations = Math.floor(1 + Math.random() * 17);
 
-        console.log(numLines);
-        console.log(numWebsitesToUse);
-        console.log();
-        console.log('');
-
 
         let output = '' + numLines + ' ' + numPowerIterations + '\n';
 
@@ -33,14 +28,13 @@ export default function RandomizeButton(props){
             const randomIndex = Math.floor(Math.random() * listOfWebsites.length);
             sitesSet.add(listOfWebsites[randomIndex]);
         }
-        console.log(sitesSet);
 
         const sites = Array.from(sitesSet);
 
         let lineCount = 0;
         
         const linesAdded = new Set();   //used to avoid duplicate lines
-        let numDuplicates = 0;
+
         while (lineCount < numLines){
             const firstURLIndex = Math.floor(Math.random() * sites.length);
             const secondURLIndex = Math.floor(Math.random() * sites.length);
@@ -55,9 +49,8 @@ export default function RandomizeButton(props){
             const newLine = firstURL + ' ' + secondURL + '\n';
 
             //If line is duplicate
-            if (linesAdded.has(newLine) && numDuplicates < 20)
+            if (linesAdded.has(newLine))
             {
-                numDuplicates++;
                 continue;
             }
             
