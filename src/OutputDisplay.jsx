@@ -2,8 +2,6 @@ import CopiedTooltip from "./CopiedTooltip";
 
 export default function OutputDisplay(props){
 
-    let [x, setX] = useState('');
-
     const copyOutputToClipboard = async (outputArray) => {
         if (outputArray.length === 0)
         {
